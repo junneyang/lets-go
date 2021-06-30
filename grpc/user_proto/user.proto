@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "./user_proto";
+package user_proto;
+
+service UserService {
+    rpc GetUserDetail(User) returns (UserDetail) {}
+    rpc ListUserDetails(UserGroup) returns (stream UserDetail) {}
+    rpc GetUserDetailGroup(stream User) returns (UserDetailGroup) {}
+    rpc UserChat(stream User) returns (stream User) {}
+}
+
+message User {
+    string name = 1;
+}
+
+message UserGroup {
+    repeated User users = 1;
+}
+
+message UserDetail {
+    string name = 1;
+    string address = 2;
+    string phone = 3;
+}
+
+message UserDetailGroup {
+    repeated UserDetail userDetails = 1;
+}

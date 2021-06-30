@@ -1,0 +1,19 @@
+syntax = "proto3";
+package student;
+option go_package = "/student";
+
+message Student {
+    string name = 1;
+    // int64 age = 2;
+
+    enum SEX {
+        MALE = 0;
+        FEMALE = 1;
+        UNKNOWN = 2;
+    }
+
+    SEX sex = 3;
+    repeated int32 scores = 4;
+
+    reserved "age";
+}
