@@ -1,5 +1,5 @@
 # lets-go
 
-My Golang Learning Notes...
+My Golang Learning Notes......
 
 ![image](screenshots/golang.png)
